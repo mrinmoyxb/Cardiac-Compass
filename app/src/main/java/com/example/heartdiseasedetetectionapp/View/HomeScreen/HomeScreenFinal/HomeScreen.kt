@@ -18,6 +18,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.heartdiseasedetetectionapp.R
 import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CardHeading
+import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomLabel
 import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.SexCard
 
 @Preview(showBackground = true)
@@ -31,6 +32,9 @@ fun HomeScreen(){
         Spacer(modifier = Modifier.height(30.dp))
         CardHeading()
         Spacer(modifier = Modifier.height(15.dp))
+
+        CustomLabel(heading = "Gender", 22)
+
         Row(modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceAround)
         {
