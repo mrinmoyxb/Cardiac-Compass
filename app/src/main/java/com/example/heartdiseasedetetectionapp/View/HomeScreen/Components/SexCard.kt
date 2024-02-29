@@ -1,6 +1,7 @@
 package com.example.heartdiseasedetetectionapp.View.HomeScreen.Components
 
 import android.view.WindowManager
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -15,6 +16,10 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -29,10 +34,17 @@ import com.example.heartdiseasedetetectionapp.R
 
 @Composable
 fun SexCard(label: String, image: Painter){
+
+    var cardState by remember{mutableStateOf(false)}
+    var iconState by remember{mutableStateOf(false)}
+
     Card(modifier = Modifier
         .height(176.dp)
-        .width(176.dp),
-        colors = CardDefaults.cardColors(Color(0xFFAEDEFC)),
+        .width(176.dp)
+        .clickable { cardState =!cardState
+            iconState =!iconState
+                   },
+        colors = CardDefaults.cardColors(if(cardState==false) Color(0xFFAEDEFC) else Color(0xFF52D3D8)),
         elevation = CardDefaults.cardElevation(10.dp)
     )
     {
@@ -47,7 +59,8 @@ fun SexCard(label: String, image: Painter){
             ) {
                 Icon(
                     painter = image, contentDescription = "male",
-                    modifier = Modifier.size(90.dp)
+                    modifier = Modifier.size(90.dp),
+                    tint = if(iconState==false) Color.Black else Color.White
                 )
 
                 Spacer(modifier = Modifier.height(8.dp))

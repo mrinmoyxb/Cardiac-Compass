@@ -27,7 +27,7 @@ import com.example.heartdiseasedetetectionapp.R
 fun CardHeading(){
     Card(modifier = Modifier
         .fillMaxWidth()
-        .height(170.dp)
+        .height(180.dp)
         .background(Color.Transparent),
         colors = CardDefaults.cardColors(colorResource(id = R.color.secondary)),
         elevation = CardDefaults.cardElevation(10.dp)
@@ -50,7 +50,7 @@ fun CardHeading(){
                     modifier = Modifier.offset(y = -10.dp)
                 )
                 Text("A machine learning model that can predict your heart disease with 96% accuracy",
-                    fontSize = 15.sp, color = Color.White, modifier = Modifier.offset(y=-12.dp), textAlign = TextAlign.Left)
+                    fontSize = 15.sp, color = Color.White, modifier = Modifier.offset(y=-8.dp), textAlign = TextAlign.Left)
             }
         }
     }
