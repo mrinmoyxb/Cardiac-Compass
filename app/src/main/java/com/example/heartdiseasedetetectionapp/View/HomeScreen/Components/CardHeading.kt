@@ -29,7 +29,9 @@ fun CardHeading(){
         .fillMaxWidth()
         .height(170.dp)
         .background(Color.Transparent),
-        colors = CardDefaults.cardColors(colorResource(id = R.color.secondary))){
+        colors = CardDefaults.cardColors(colorResource(id = R.color.secondary)),
+        elevation = CardDefaults.cardElevation(10.dp)
+    ){
         Box(modifier = Modifier.fillMaxSize().padding(10.dp)) {
             Column(
                 modifier = Modifier.fillMaxWidth(0.7f)

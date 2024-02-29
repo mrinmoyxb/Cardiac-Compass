@@ -5,5 +5,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="secondary">#FFFF407D</color>
     <color name="primary">#FFF5F7F8</color>
+    <color name="tertiary">#FFAEDEFC</color>
 
 </resources>
