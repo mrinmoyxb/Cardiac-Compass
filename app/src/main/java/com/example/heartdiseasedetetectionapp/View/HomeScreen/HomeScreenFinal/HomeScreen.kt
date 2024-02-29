@@ -19,6 +19,7 @@ import androidx.compose.ui.unit.dp
 import com.example.heartdiseasedetetectionapp.R
 import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CardHeading
 import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomLabel
+import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomTextField
 import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.SexCard
 
 @Preview(showBackground = true)
@@ -42,5 +43,10 @@ fun HomeScreen(){
             Spacer(modifier = Modifier.width(4.dp))
             SexCard("Female", painterResource(id = R.drawable.female))
         }
+        Spacer(modifier = Modifier.height(12.dp))
+
+        CustomLabel(heading = "Heart Rate", 22)
+        CustomTextField("Enter heart rate")
+
     }
 }
