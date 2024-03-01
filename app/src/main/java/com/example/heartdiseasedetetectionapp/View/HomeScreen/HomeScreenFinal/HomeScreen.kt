@@ -39,7 +39,9 @@ fun HomeScreen(){
 
         LazyColumn() {
             item {
-                CustomLabel(heading = "Gender", 22)
+
+                // Row 1
+                CustomLabel(heading = "Gender", 20)
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceAround
@@ -51,40 +53,61 @@ fun HomeScreen(){
                 }
                 Spacer(modifier = Modifier.height(12.dp))
 
-                CustomLabel(heading = "fbs > 120 mg/dl", 22)
+                // Row 2
+                Row(modifier = Modifier.fillMaxWidth()) {
+                    CustomLabel(heading = "FBS > 120 mg/dl", 20)
+                    Spacer(modifier = Modifier.width(35.dp))
+                    CustomLabel(heading = "Exang", 20)
+                }
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceAround
                 ) {
                     CustomCheckBox(text1 = "Yes", text2 = "No")
-
                     CustomCheckBox(text1 = "Yes", text2 = "No")
 
                 }
                 Spacer(modifier = Modifier.height(12.dp))
 
-                CustomLabel(heading = "Trestbps", 22)
+                // Row 3
+                CustomLabel(heading = "Trestbps", 20)
                 CustomTextField("Enter your resting blood pressure")
                 Spacer(modifier = Modifier.height(12.dp))
 
-                CustomLabel(heading = "Chol", 22)
+                // Row 4
+                CustomLabel(heading = "Chol", 20)
                 CustomTextField("Enter your cholesterol measurement in mg/dl")
                 Spacer(modifier = Modifier.height(12.dp))
 
-                CustomLabel(heading = "Thalach", 22)
+                // Row 5
+                CustomLabel(heading = "Thalach", 20)
                 CustomTextField("Enter your maximum heart rate achieved")
                 Spacer(modifier = Modifier.height(12.dp))
 
-                CustomLabel(heading = "Chest Pain Type", 22)
+                // Row 6
+                CustomLabel(heading = "Chest Pain Type", 20)
                 CustomDropDownMenu(items = listOf("Angina", "Atypical angina", "Non-anginal", "Asymptomatic"))
                 Spacer(modifier = Modifier.height(12.dp))
 
-                CustomLabel(heading = "Exercise-induced angina", 22)
-                CustomDropDownMenu(items = listOf("Yes", "No"))
+                // Row 7
+                CustomLabel(heading = "Thalassemia Value", 20)
+                CustomDropDownMenu(items = listOf("Null", "Fixed defect", "normal blood flow", "reversible defect"))
                 Spacer(modifier = Modifier.height(12.dp))
 
-                CustomLabel(heading = "Thalassemia Value", 22)
-                CustomDropDownMenu(items = listOf("Null", "Fixed defect", "normal blood flow", "reversible defect"))
+                // Row 8
+                CustomLabel(heading = "Resting Electrocardiograph", 20)
+                CustomDropDownMenu(items = listOf("Probable or definite left ventricular hypertrophy", "Normal", "Having ST-T wave abnormality"))
+                Spacer(modifier = Modifier.height(12.dp))
+
+                // Row 9
+                CustomLabel(heading = "OldPeak", 20)
+                CustomTextField("Enter ST depression induced by exercise relative to rest")
+                Spacer(modifier = Modifier.height(12.dp))
+
+                // Row 10
+                CustomLabel(heading = "Slope", 20)
+                CustomDropDownMenu(items = listOf("Downsloping", "Flat", "Upsloping"))
+                Spacer(modifier = Modifier.height(12.dp))
                 
 
             }
