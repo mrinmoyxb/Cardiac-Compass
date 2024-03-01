@@ -19,6 +19,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.heartdiseasedetetectionapp.R
 import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CardHeading
+import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomDropDownMenu
 import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomLabel
 import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomTextField
 import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.SexCard
@@ -56,6 +57,7 @@ fun HomeScreen(){
                 CustomLabel(heading = "Chol", 22)
                 CustomTextField("Enter your cholesterol measurement in mg/dl")
 
+                CustomDropDownMenu()
 
             }
         }
