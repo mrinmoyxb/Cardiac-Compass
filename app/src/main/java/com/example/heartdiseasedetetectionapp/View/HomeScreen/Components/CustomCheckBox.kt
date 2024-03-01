@@ -27,6 +27,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Color.Companion.White
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -74,7 +75,8 @@ fun CustomCheckBox(){
                             Icon(
                                 painter = painterResource(id = R.drawable.check_white),
                                 contentDescription = "yes",
-                                modifier = Modifier.size(60.dp)
+                                modifier = Modifier.size(60.dp),
+                                tint = if(buttonStateYes==false) Color.Transparent else Color.White
                             )
                         }
                     }
@@ -93,16 +95,23 @@ fun CustomCheckBox(){
                             .background(Color.Transparent)
                             .border(
                                 width = 2.dp,
-                                color = if (buttonStateNo == false) Color(0xFF000000) else Color(
+                                color = if (buttonStateYes == false) Color(0xFF000000) else Color(
                                     0xFF11009E
                                 ),
                                 shape = RoundedCornerShape(10.dp)
                             )
                             .clickable { buttonStateNo = !buttonStateNo },
                         shape = RoundedCornerShape(10.dp),
-                        colors = CardDefaults.cardColors(Color.White)
+                        colors = CardDefaults.cardColors(if(buttonStateNo==false) Color(0xFFFFFFFF) else Color(0xFF11009E))
                     ) {
-
+                        Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                            Icon(
+                                painter = painterResource(id = R.drawable.check_white),
+                                contentDescription = "yes",
+                                modifier = Modifier.size(60.dp),
+                                tint = if(buttonStateNo==false) Color.Transparent else Color.White
+                            )
+                        }
                     }
                     Spacer(modifier = Modifier.height(2.dp))
                     Text("No", fontSize = 7.sp, color = Color.Black, fontWeight = FontWeight.Medium,
