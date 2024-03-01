@@ -58,13 +58,20 @@ fun HomeScreen(){
                 CustomTextField("Enter your cholesterol measurement in mg/dl")
                 Spacer(modifier = Modifier.height(12.dp))
 
+                CustomLabel(heading = "Thalach", 22)
+                CustomTextField("Enter your maximum heart rate achieved")
+                Spacer(modifier = Modifier.height(12.dp))
+
                 CustomLabel(heading = "Chest Pain Type", 22)
                 CustomDropDownMenu(items = listOf("Angina", "Atypical angina", "Non-anginal", "Asymptomatic"))
                 Spacer(modifier = Modifier.height(12.dp))
 
                 CustomLabel(heading = "Exercise-induced angina", 22)
                 CustomDropDownMenu(items = listOf("Yes", "No"))
+                Spacer(modifier = Modifier.height(12.dp))
 
+                CustomLabel(heading = "Thalassemia Value", 22)
+                CustomDropDownMenu(items = listOf("Null", "Fixed defect", "normal blood flow", "reversible defect"))
             }
         }
     }
