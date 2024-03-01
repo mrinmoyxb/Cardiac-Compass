@@ -48,7 +48,7 @@ fun CustomTextField(placeholder: String){
         modifier = Modifier
             .border(
                 width = 2.dp, color = if (value == "") Color.Black else colorResource(
-                    id = R.color.border
+                    id = R.color.border1
                 ),
                 shape = RoundedCornerShape(10.dp)
             )

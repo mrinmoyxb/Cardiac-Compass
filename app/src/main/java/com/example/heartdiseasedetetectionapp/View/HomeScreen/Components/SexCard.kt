@@ -37,14 +37,17 @@ fun SexCard(label: String, image: Painter){
 
     var cardState by remember{mutableStateOf(false)}
     var iconState by remember{mutableStateOf(false)}
+    var textState by remember{ mutableStateOf(false)}
+
     var c = 0xFFAEDEFC
     Card(modifier = Modifier
         .height(176.dp)
         .width(176.dp)
         .clickable { cardState =!cardState
             iconState =!iconState
+            textState =!textState
                    },
-        colors = CardDefaults.cardColors(if(cardState==false) Color(0xFFFFFFFF) else Color(0xFF52D3D8)),
+        colors = CardDefaults.cardColors(if(cardState==false) Color(0xFFFFFFFF) else Color(0xFF11009E)),
         elevation = CardDefaults.cardElevation(10.dp)
     )
     {
@@ -64,7 +67,7 @@ fun SexCard(label: String, image: Painter){
                 )
 
                 Spacer(modifier = Modifier.height(8.dp))
-                Text(label, fontSize = 20.sp)
+                Text(label, fontSize = 20.sp, color = if(textState==false) Color.Black else Color.White)
             }
         }
     }

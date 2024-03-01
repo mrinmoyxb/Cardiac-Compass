@@ -19,6 +19,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.heartdiseasedetetectionapp.R
 import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CardHeading
+import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomCheckBox
 import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomDropDownMenu
 import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomLabel
 import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomTextField
@@ -50,6 +51,18 @@ fun HomeScreen(){
                 }
                 Spacer(modifier = Modifier.height(12.dp))
 
+                CustomLabel(heading = "fbs > 120 mg/dl", 22)
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceAround
+                ) {
+                    CustomCheckBox(text1 = "Yes", text2 = "No")
+
+                    CustomCheckBox(text1 = "Yes", text2 = "No")
+
+                }
+                Spacer(modifier = Modifier.height(12.dp))
+
                 CustomLabel(heading = "Trestbps", 22)
                 CustomTextField("Enter your resting blood pressure")
                 Spacer(modifier = Modifier.height(12.dp))
@@ -72,6 +85,8 @@ fun HomeScreen(){
 
                 CustomLabel(heading = "Thalassemia Value", 22)
                 CustomDropDownMenu(items = listOf("Null", "Fixed defect", "normal blood flow", "reversible defect"))
+                
+
             }
         }
     }

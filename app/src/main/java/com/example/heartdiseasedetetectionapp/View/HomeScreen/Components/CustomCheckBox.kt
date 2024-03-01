@@ -38,7 +38,7 @@ import com.example.heartdiseasedetetectionapp.R
 
 @Preview(showBackground = true)
 @Composable
-fun CustomCheckBox(){
+fun CustomCheckBox(text1: String = "Yes", text2: String = "No"){
     var buttonStateYes by remember{mutableStateOf(false)}
     var buttonStateNo by remember{mutableStateOf(false)}
 
@@ -47,77 +47,112 @@ fun CustomCheckBox(){
         .width(176.dp)
         .background(Color.Transparent),
         shape = RoundedCornerShape(10.dp),
-        colors = CardDefaults.cardColors(Color.White)){
+        colors = CardDefaults.cardColors(Color.White),
+        elevation = CardDefaults.cardElevation(10.dp)
+    ) {
         Box(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(10.dp)
+                .padding(8.dp)
         ) {
-            Row(horizontalArrangement = Arrangement.SpaceBetween) {
-                Column() {
-                    Card(
-                        modifier = Modifier
-                            .width(73.dp)
-                            .height(68.dp)
-                            .background(Color.Transparent)
-                            .border(
-                                width = 2.dp,
-                                color = if (buttonStateYes == false) Color(0xFF000000) else Color(
-                                    0xFF11009E
-                                ),
-                                shape = RoundedCornerShape(10.dp)
+            Column() {
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceEvenly
+                ) {
+                    Column() {
+                        Card(
+                            modifier = Modifier
+                                .width(62.dp)
+                                .height(62.dp)
+                                .background(Color.Transparent)
+                                .border(
+                                    width = 1.dp,
+                                    color = if (buttonStateYes == false) Color(0xFF000000) else Color(
+                                        0xFF11009E
+                                    ),
+                                    shape = RoundedCornerShape(10.dp)
+                                )
+                                .clickable { buttonStateYes = !buttonStateYes },
+                            shape = RoundedCornerShape(10.dp),
+                            colors = CardDefaults.cardColors(
+                                if (buttonStateYes == false) Color(
+                                    0xFFFFFFFF
+                                ) else Color(0xFF11009E)
                             )
-                            .clickable { buttonStateYes = !buttonStateYes },
-                        shape = RoundedCornerShape(10.dp),
-                        colors = CardDefaults.cardColors(if(buttonStateYes==false) Color(0xFFFFFFFF) else Color(0xFF11009E))
-                    ) {
-                        Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                            Icon(
-                                painter = painterResource(id = R.drawable.check_white),
-                                contentDescription = "yes",
-                                modifier = Modifier.size(60.dp),
-                                tint = if(buttonStateYes==false) Color.Transparent else Color.White
-                            )
+                        ) {
+                            Box(
+                                modifier = Modifier.fillMaxSize(),
+                                contentAlignment = Alignment.Center
+                            ) {
+                                Icon(
+                                    painter = painterResource(id = R.drawable.check_white),
+                                    contentDescription = "yes",
+                                    modifier = Modifier.size(40.dp),
+                                    tint = if (buttonStateYes == false) Color.Transparent else Color.White
+                                )
+                            }
                         }
                     }
-                    Spacer(modifier = Modifier.height(2.dp))
-                    Text("Yes", fontSize = 7.sp, color = Color.Black, fontWeight = FontWeight.Medium,
-                        textAlign = TextAlign.Center, modifier = Modifier.fillMaxWidth(0.47f))
-                }
 
-                Spacer(modifier = Modifier.width(10.dp))
+                    Spacer(modifier = Modifier.width(10.dp))
 
-                Column() {
-                    Card(
-                        modifier = Modifier
-                            .width(73.dp)
-                            .height(68.dp)
-                            .background(Color.Transparent)
-                            .border(
-                                width = 2.dp,
-                                color = if (buttonStateYes == false) Color(0xFF000000) else Color(
-                                    0xFF11009E
-                                ),
-                                shape = RoundedCornerShape(10.dp)
+                    Column() {
+                        Card(
+                            modifier = Modifier
+                                .width(62.dp)
+                                .height(62.dp)
+                                .background(Color.Transparent)
+                                .border(
+                                    width = 1.dp,
+                                    color = if (buttonStateNo == false) Color(0xFF000000) else Color(
+                                        0xFF11009E
+                                    ),
+                                    shape = RoundedCornerShape(10.dp)
+                                )
+                                .clickable { buttonStateNo = !buttonStateNo },
+                            shape = RoundedCornerShape(10.dp),
+                            colors = CardDefaults.cardColors(
+                                if (buttonStateNo == false) Color(
+                                    0xFFFFFFFF
+                                ) else Color(0xFF11009E)
                             )
-                            .clickable { buttonStateNo = !buttonStateNo },
-                        shape = RoundedCornerShape(10.dp),
-                        colors = CardDefaults.cardColors(if(buttonStateNo==false) Color(0xFFFFFFFF) else Color(0xFF11009E))
-                    ) {
-                        Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                            Icon(
-                                painter = painterResource(id = R.drawable.check_white),
-                                contentDescription = "yes",
-                                modifier = Modifier.size(60.dp),
-                                tint = if(buttonStateNo==false) Color.Transparent else Color.White
-                            )
+                        ) {
+                            Box(
+                                modifier = Modifier.fillMaxSize(),
+                                contentAlignment = Alignment.Center
+                            ) {
+                                Icon(
+                                    painter = painterResource(id = R.drawable.check_white),
+                                    contentDescription = "yes",
+                                    modifier = Modifier.size(40.dp),
+                                    tint = if (buttonStateNo == false) Color.Transparent else Color.White
+                                )
+                            }
                         }
                     }
-                    Spacer(modifier = Modifier.height(2.dp))
-                    Text("No", fontSize = 7.sp, color = Color.Black, fontWeight = FontWeight.Medium,
-                        textAlign = TextAlign.Center, modifier = Modifier.fillMaxWidth())
+
                 }
 
+                Spacer(modifier = Modifier.height(2.dp))
+                Row(modifier = Modifier.fillMaxWidth()) {
+                    Text(
+                        text1,
+                        fontSize = 14.sp,
+                        color = Color.Black,
+                        fontWeight = FontWeight.Medium,
+                        textAlign = TextAlign.Center,
+                        modifier = Modifier.fillMaxWidth(0.5f)
+                    )
+                    Text(
+                        text2,
+                        fontSize = 14.sp,
+                        color = Color.Black,
+                        fontWeight = FontWeight.Medium,
+                        textAlign = TextAlign.Center,
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                }
             }
         }
     }

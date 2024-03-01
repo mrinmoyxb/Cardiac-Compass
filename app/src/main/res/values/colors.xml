@@ -7,5 +7,6 @@
     <color name="primary">#FFF5F7F8</color>
     <color name="tertiary">#FFAEDEFC</color>
     <color name="border">#FF52D3D8</color>
+    <color name="border1">#FF11009E</color>
 
 </resources>
