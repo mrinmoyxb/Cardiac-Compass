@@ -101,7 +101,7 @@ fun HomeScreen(){
 
                 // Row 9
                 CustomLabel(heading = "OldPeak", 20)
-                CustomTextField("Enter ST depression induced by exercise relative to rest")
+                CustomTextField("ST depression induced by exercise relative to rest")
                 Spacer(modifier = Modifier.height(12.dp))
 
                 // Row 10
