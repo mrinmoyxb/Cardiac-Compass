@@ -17,17 +17,19 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 import com.example.heartdiseasedetetectionapp.R
 import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CardHeading
 import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomCheckBox
 import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomDropDownMenu
 import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomLabel
 import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomTextField
+import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.GenerateResult
 import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.SexCard
 
-@Preview(showBackground = true)
 @Composable
-fun HomeScreen(){
+fun HomeScreen(navController: NavHostController){
     Column(modifier = Modifier
         .fillMaxSize()
         .background(colorResource(id = R.color.primary))
@@ -107,9 +109,10 @@ fun HomeScreen(){
                 // Row 10
                 CustomLabel(heading = "Slope", 20)
                 CustomDropDownMenu(items = listOf("Downsloping", "Flat", "Upsloping"))
-                Spacer(modifier = Modifier.height(12.dp))
-                
+                Spacer(modifier = Modifier.height(20.dp))
 
+                GenerateResult(navController = navController)
+                Spacer(modifier = Modifier.height(10.dp))
             }
         }
     }

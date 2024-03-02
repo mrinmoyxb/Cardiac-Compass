@@ -35,11 +35,11 @@ fun ResultCard(result: Int){
             .width(300.dp)
             .background(Color.Transparent),
         shape = RoundedCornerShape(10.dp),
-        colors = CardDefaults.cardColors(colorResource(id = R.color.secondary)),
+        colors = CardDefaults.cardColors(colorResource(id = R.color.border1)),
         elevation = CardDefaults.cardElevation(10.dp)
     ){
         Box(modifier = Modifier.fillMaxSize().padding(10.dp), contentAlignment = Alignment.Center) {
-            Text(r, fontSize = 32.sp, color = Color.White, textAlign = TextAlign.Center, fontWeight = FontWeight.Medium)
+            Text(r, fontSize = 25.sp, color = Color.White, textAlign = TextAlign.Center, fontWeight = FontWeight.Medium)
         }
     }
 }
