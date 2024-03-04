@@ -1,7 +1,6 @@
 package com.example.heartdiseasedetetectionapp.View.OnBoardingScreens.Components
 
 import androidx.annotation.DrawableRes
-import androidx.compose.ui.res.painterResource
 import com.example.heartdiseasedetetectionapp.R
 
 data class Pages(
