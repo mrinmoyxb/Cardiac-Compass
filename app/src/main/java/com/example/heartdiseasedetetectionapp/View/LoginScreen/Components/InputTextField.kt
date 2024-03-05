@@ -57,12 +57,6 @@ fun CustomTextField(placeholder: String, icon: ImageVector) {
             placeholder = { Text(placeholder, fontSize = 15.sp) },
             shape = RoundedCornerShape(20.dp),
             modifier = Modifier
-                .border(
-                    width = 2.dp, color = if (value == "") Color.Black else colorResource(
-                        id = R.color.border1
-                    ),
-                    shape = RoundedCornerShape(20.dp)
-                )
                 .fillMaxWidth()
                 .shadow(10.dp, shape = RoundedCornerShape(10.dp))
         )
