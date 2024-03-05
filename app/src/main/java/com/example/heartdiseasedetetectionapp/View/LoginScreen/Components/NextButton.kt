@@ -25,7 +25,7 @@ fun NextButton(onClick: () -> Unit){
     Card(
         shape = CircleShape,
         colors = CardDefaults.cardColors(colorResource(id = R.color.border1)),
-        modifier = Modifier.size(60.dp).clickable {  },
+        modifier = Modifier.size(60.dp).clickable { onClick() },
         elevation = CardDefaults.cardElevation(10.dp)
     ){
         Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
