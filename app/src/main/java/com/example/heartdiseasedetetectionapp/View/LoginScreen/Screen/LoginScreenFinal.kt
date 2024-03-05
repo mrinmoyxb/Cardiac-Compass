@@ -4,8 +4,10 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
@@ -28,6 +30,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.heartdiseasedetetectionapp.R
 import com.example.heartdiseasedetetectionapp.View.LoginScreen.Components.CustomTextField
+import com.example.heartdiseasedetetectionapp.View.LoginScreen.Components.NextButton
 import com.example.heartdiseasedetetectionapp.View.LoginScreen.Components.TextHeading
 
 @Preview(showBackground = true)
@@ -55,6 +58,13 @@ fun LoginScreen(){
         Spacer(modifier = Modifier.height(20.dp))
         TextHeading(text = "Date of Birth", fontSize = 22, color = Color.Black, fontWeight = FontWeight.SemiBold)
         CustomTextField("Enter your dob", Icons.Filled.DateRange)
+
+        Spacer(modifier = Modifier.height(20.dp))
+        Row(modifier = Modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.Center) {
+            NextButton(onClick = {})
+        }
 
     }
 }
