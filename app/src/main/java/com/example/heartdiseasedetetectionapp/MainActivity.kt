@@ -10,6 +10,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.heartdiseasedetetectionapp.Model.Demo
 import com.example.heartdiseasedetetectionapp.Navigation.MainScreen
 import com.example.heartdiseasedetetectionapp.View.HomeScreen.HomeScreenFinal.HomeScreen
 import com.example.heartdiseasedetetectionapp.ui.theme.HeartDiseaseDetetectionAppTheme
@@ -19,7 +20,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             HeartDiseaseDetetectionAppTheme {
-                MainScreen()
+                Demo()
             }
         }
     }
