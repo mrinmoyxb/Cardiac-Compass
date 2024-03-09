@@ -22,7 +22,6 @@ import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import com.example.heartdiseasedetetectionapp.R
 import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CardHeading
-import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomCheckBox
 import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomCheckBoxExang
 import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomCheckBoxFbs
 import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomDropDownMenu
