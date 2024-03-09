@@ -39,8 +39,11 @@ import com.example.heartdiseasedetetectionapp.R
 @Preview(showBackground = true)
 @Composable
 fun CustomCheckBox(text1: String = "Yes", text2: String = "No"){
+
     var buttonStateYes by remember{mutableStateOf(false)}
     var buttonStateNo by remember{mutableStateOf(false)}
+
+
 
     Card(modifier = Modifier
         .height(100.dp)
@@ -110,7 +113,7 @@ fun CustomCheckBox(text1: String = "Yes", text2: String = "No"){
                                     ),
                                     shape = RoundedCornerShape(10.dp)
                                 )
-                                .clickable { buttonStateNo = !buttonStateNo },
+                                .clickable { buttonStateNo = !buttonStateNo},
                             shape = RoundedCornerShape(10.dp),
                             colors = CardDefaults.cardColors(
                                 if (buttonStateNo == false) Color(

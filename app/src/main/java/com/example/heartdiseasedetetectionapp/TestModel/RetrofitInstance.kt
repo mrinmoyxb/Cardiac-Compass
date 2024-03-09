@@ -1,6 +1,5 @@
 package com.example.heartdiseasedetetectionapp.TestModel
 
-import com.example.heartdiseasedetetectionapp.Model.ApiInterface
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
