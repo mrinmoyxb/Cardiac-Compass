@@ -23,6 +23,8 @@ import androidx.navigation.NavHostController
 import com.example.heartdiseasedetetectionapp.R
 import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CardHeading
 import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomCheckBox
+import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomCheckBoxExang
+import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomCheckBoxFbs
 import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomDropDownMenu
 import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomLabel
 import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomTextField
@@ -70,8 +72,8 @@ fun HomeScreen(navController: NavHostController){
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceAround
                 ) {
-                    CustomCheckBox(text1 = "Yes", text2 = "No")
-                    CustomCheckBox(text1 = "Yes", text2 = "No")
+                    CustomCheckBoxFbs(text1 = "Yes", text2 = "No", viewModel)
+                    CustomCheckBoxExang(text1 = "Yes", text2 = "No", viewModel)
 
                 }
                 Spacer(modifier = Modifier.height(12.dp))

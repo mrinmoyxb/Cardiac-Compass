@@ -27,23 +27,20 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.Color.Companion.White
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.heartdiseasedetetectionapp.R
+import com.example.heartdiseasedetetectionapp.ViewModel.HeartDiseaseViewModel
 
-@Preview(showBackground = true)
+
 @Composable
-fun CustomCheckBox(text1: String = "Yes", text2: String = "No"){
+fun CustomCheckBoxExang(text1: String = "Yes", text2: String = "No", viewModel: HeartDiseaseViewModel){
 
     var buttonStateYes by remember{mutableStateOf(false)}
     var buttonStateNo by remember{mutableStateOf(false)}
-
-
 
     Card(modifier = Modifier
         .height(100.dp)
@@ -76,7 +73,9 @@ fun CustomCheckBox(text1: String = "Yes", text2: String = "No"){
                                     ),
                                     shape = RoundedCornerShape(10.dp)
                                 )
-                                .clickable { buttonStateYes = !buttonStateYes },
+                                .clickable { buttonStateYes = !buttonStateYes
+                                    if(buttonStateYes) viewModel.exang.value = 1 else viewModel.exang.value=-1},
+
                             shape = RoundedCornerShape(10.dp),
                             colors = CardDefaults.cardColors(
                                 if (buttonStateYes == false) Color(
@@ -113,7 +112,8 @@ fun CustomCheckBox(text1: String = "Yes", text2: String = "No"){
                                     ),
                                     shape = RoundedCornerShape(10.dp)
                                 )
-                                .clickable { buttonStateNo = !buttonStateNo},
+                                .clickable { buttonStateNo = !buttonStateNo
+                                    if(buttonStateNo) viewModel.exang.value = 0 else viewModel.exang.value=-1},
                             shape = RoundedCornerShape(10.dp),
                             colors = CardDefaults.cardColors(
                                 if (buttonStateNo == false) Color(
