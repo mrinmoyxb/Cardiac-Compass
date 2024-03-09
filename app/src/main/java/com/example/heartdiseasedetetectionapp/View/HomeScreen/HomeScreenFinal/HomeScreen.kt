@@ -26,9 +26,13 @@ import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomC
 import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomCheckBoxFbs
 import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomDropDownMenu
 import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomLabel
-import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomTextField
+import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomTextFieldChol
+import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomTextFieldOldpeak
+import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomTextFieldThalach
+import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomTextFieldTrestbps
 import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.GenerateResult
 import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.SexCard
+import com.example.heartdiseasedetetectionapp.View.LoginScreen.Components.CustomTextField
 import com.example.heartdiseasedetetectionapp.ViewModel.HeartDiseaseViewModel
 
 @Composable
@@ -79,17 +83,17 @@ fun HomeScreen(navController: NavHostController){
 
                 // Row 3
                 CustomLabel(heading = "Trestbps", 20)
-                CustomTextField("Enter your resting blood pressure")
+                CustomTextFieldTrestbps("Enter your resting blood pressure", viewModel)
                 Spacer(modifier = Modifier.height(12.dp))
 
                 // Row 4
                 CustomLabel(heading = "Chol", 20)
-                CustomTextField("Enter your cholesterol measurement in mg/dl")
+                CustomTextFieldChol("Enter your cholesterol measurement in mg/dl", viewModel)
                 Spacer(modifier = Modifier.height(12.dp))
 
                 // Row 5
                 CustomLabel(heading = "Thalach", 20)
-                CustomTextField("Enter your maximum heart rate achieved")
+                CustomTextFieldThalach("Enter your maximum heart rate achieved", viewModel)
                 Spacer(modifier = Modifier.height(12.dp))
 
                 // Row 6
@@ -109,7 +113,7 @@ fun HomeScreen(navController: NavHostController){
 
                 // Row 9
                 CustomLabel(heading = "OldPeak", 20)
-                CustomTextField("ST depression induced by exercise relative to rest")
+                CustomTextFieldOldpeak("ST depression induced by exercise relative to rest", viewModel)
                 Spacer(modifier = Modifier.height(12.dp))
 
                 // Row 10

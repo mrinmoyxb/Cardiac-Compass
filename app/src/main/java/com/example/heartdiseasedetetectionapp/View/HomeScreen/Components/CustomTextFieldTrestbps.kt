@@ -1,5 +1,6 @@
 package com.example.heartdiseasedetetectionapp.View.HomeScreen.Components
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -16,21 +17,22 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
-import androidx.compose.ui.text.Placeholder
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.heartdiseasedetetectionapp.R
+import com.example.heartdiseasedetetectionapp.ViewModel.HeartDiseaseViewModel
 
 
+@SuppressLint("StateFlowValueCalledInComposition")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun CustomTextField(placeholder: String){
-    var value by remember{mutableStateOf("")}
+fun CustomTextFieldTrestbps(placeholder: String, viewModel: HeartDiseaseViewModel){
+    var textFieldValue by remember{mutableStateOf("")}
+    viewModel.trestbps.value = textFieldValue.toInt()
 
-    TextField(value = value, onValueChange = {value=it},
+    TextField(value = textFieldValue, onValueChange = {textFieldValue=it},
         colors = TextFieldDefaults.textFieldColors(
             containerColor = Color.White,
             focusedIndicatorColor = Color.Transparent,
@@ -47,7 +49,7 @@ fun CustomTextField(placeholder: String){
         shape = RoundedCornerShape(10.dp),
         modifier = Modifier
             .border(
-                width = 2.dp, color = if (value == "") Color.Black else colorResource(
+                width = 2.dp, color = if (textFieldValue == "") Color.Black else colorResource(
                     id = R.color.border1
                 ),
                 shape = RoundedCornerShape(10.dp)
