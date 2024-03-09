@@ -17,6 +17,7 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import com.example.heartdiseasedetetectionapp.R
@@ -27,9 +28,13 @@ import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomL
 import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomTextField
 import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.GenerateResult
 import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.SexCard
+import com.example.heartdiseasedetetectionapp.ViewModel.HeartDiseaseViewModel
 
 @Composable
 fun HomeScreen(navController: NavHostController){
+
+    val viewModel: HeartDiseaseViewModel = viewModel()
+
     Column(modifier = Modifier
         .fillMaxSize()
         .background(colorResource(id = R.color.primary))

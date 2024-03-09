@@ -1,8 +1,11 @@
 package com.example.heartdiseasedetetectionapp.ViewModel
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.example.heartdiseasedetetectionapp.Model.RetrofitInstance
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.launch
 
 class HeartDiseaseViewModel: ViewModel() {
 
@@ -45,5 +48,25 @@ class HeartDiseaseViewModel: ViewModel() {
     var thal = MutableStateFlow<Int>(0)
     var _thal: StateFlow<Int> = thal
 
+    var responseValue = MutableStateFlow<String>("")
+    var _responseValue: StateFlow<String> = responseValue
+
+    var serverCode = MutableStateFlow<String>("")
+    var _servercode: StateFlow<String> = serverCode
+
+    fun postResponse(age: Int, sex: Int, cp: Int, trestbps: Int, chol: Int, fbs: Int,
+                     restecg: Int, thalach: Int, exang: Int, oldpeak: Float, slope: Int,
+                     ca: Int, thal: Int) {
+        viewModelScope.launch {
+            val response = RetrofitInstance.apiInterface
+                .predictDisease(age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal)
+
+            if (response.isSuccessful) {
+                responseValue.value = response.body()?.targetValue ?: "No data"
+            } else {
+                serverCode.value = response.code().toString()
+            }
+        }
+    }
 
 }
