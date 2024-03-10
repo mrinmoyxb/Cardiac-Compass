@@ -22,7 +22,11 @@ import com.example.heartdiseasedetetectionapp.R
 import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CardHeading
 import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomCheckBoxExang
 import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomCheckBoxFbs
-import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomDropDownMenu
+import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomDropDownMenuCa
+import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomDropDownMenuCp
+import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomDropDownMenuRestecg
+import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomDropDownMenuSlope
+import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomDropDownMenuThal
 import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomLabel
 import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomTextFieldChol
 import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomTextFieldOldpeak
@@ -95,17 +99,17 @@ fun HomeScreen(navController: NavHostController){
 
                 // Row 6
                 CustomLabel(heading = "Chest Pain Type", 20)
-                CustomDropDownMenu(items = listOf("Angina", "Atypical angina", "Non-anginal", "Asymptomatic"))
+                CustomDropDownMenuCp(items = listOf("Angina", "Atypical angina", "Non-anginal", "Asymptomatic"), viewModel)
                 Spacer(modifier = Modifier.height(12.dp))
 
                 // Row 7
                 CustomLabel(heading = "Thalassemia Value", 20)
-                CustomDropDownMenu(items = listOf("Null", "Fixed defect", "normal blood flow", "reversible defect"))
+                CustomDropDownMenuThal(items = listOf("Fixed defect", "Normal blood flow", "Reversible defect"), viewModel)
                 Spacer(modifier = Modifier.height(12.dp))
 
                 // Row 8
                 CustomLabel(heading = "Resting Electrocardiograph", 20)
-                CustomDropDownMenu(items = listOf("Probable or definite left ventricular hypertrophy", "Normal", "Having ST-T wave abnormality"))
+                CustomDropDownMenuRestecg(items = listOf("Normal", "Probable or definite left ventricular hypertrophy", "Having ST-T wave abnormality"), viewModel)
                 Spacer(modifier = Modifier.height(12.dp))
 
                 // Row 9
@@ -115,9 +119,15 @@ fun HomeScreen(navController: NavHostController){
 
                 // Row 10
                 CustomLabel(heading = "Slope", 20)
-                CustomDropDownMenu(items = listOf("Downsloping", "Flat", "Upsloping"))
+                CustomDropDownMenuSlope(items = listOf("Upsloping", "Flat", "Downsloping"), viewModel)
                 Spacer(modifier = Modifier.height(20.dp))
 
+                // Row 11
+                CustomLabel(heading = " Number of major vessels(ca)", 20)
+                CustomDropDownMenuCa(items = listOf("0", "1", "2", "3"), viewModel)
+                Spacer(modifier = Modifier.height(20.dp))
+
+                // Row 12
                 GenerateResult(navController = navController)
                 Spacer(modifier = Modifier.height(10.dp))
             }

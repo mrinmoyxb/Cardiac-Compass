@@ -1,5 +1,6 @@
 package com.example.heartdiseasedetetectionapp.View.HomeScreen.Components
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
@@ -7,9 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExposedDropdownMenuBox
@@ -35,19 +34,26 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.TextInputService
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.heartdiseasedetetectionapp.ViewModel.HeartDiseaseViewModel
 
-
+@SuppressLint("StateFlowValueCalledInComposition")
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalComposeUiApi::class)
 @Composable
-fun CustomDropDownMenu(items: List<String>) {
+fun CustomDropDownMenuCa(items: List<String>, viewModel: HeartDiseaseViewModel) {
     var isExpanded by remember { mutableStateOf(false) }
     val options: List<String> = items
     var category by remember { mutableStateOf(options[0]) }
     var keyboardController = LocalSoftwareKeyboardController.current
     val myTextInputService: TextInputService? = null
+
+    when(category){
+        "0" -> viewModel.ca.value = 0
+        "1" -> viewModel.ca.value = 1
+        "2" -> viewModel.ca.value = 2
+        "3" -> viewModel.ca.value = 2
+    }
 
     CompositionLocalProvider(
         LocalTextInputService provides myTextInputService
