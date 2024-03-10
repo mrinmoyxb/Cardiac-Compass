@@ -11,6 +11,16 @@ import com.example.heartdiseasedetetectionapp.ui.theme.HeartDiseaseDetetectionAp
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        enableEdgeToEdge(
+            statusBarStyle = SystemBarStyle.light(
+                Color.TRANSPARENT, Color.TRANSPARENT
+            ),
+            navigationBarStyle = SystemBarStyle.light(
+                Color.TRANSPARENT, Color.TRANSPARENT
+            )
+        )
+
         super.onCreate(savedInstanceState)
         setContent {
             HeartDiseaseDetetectionAppTheme {

@@ -4,6 +4,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -32,21 +33,21 @@ fun CardHeading(){
         .fillMaxWidth()
         .height(180.dp)
         .background(Color.Transparent),
-        colors = CardDefaults.cardColors(colorResource(id = R.color.secondary)),
+        colors = CardDefaults.cardColors(colorResource(id = R.color.border1)),
         elevation = CardDefaults.cardElevation(10.dp)
     ){
         Box(modifier = Modifier
             .fillMaxSize()
             .padding(10.dp))
         {
-                Column(
-                    modifier = Modifier.fillMaxWidth(0.7f)
-                ) {
+            Row(modifier = Modifier.fillMaxWidth()) {
+                Column(modifier = Modifier.fillMaxWidth(0.7f)) {
                     Text(
                         "Heart Disease",
                         fontSize = 35.sp,
                         color = Color.White,
-                        fontWeight = FontWeight.Bold
+                        fontWeight = FontWeight.Bold,
+
                     )
                     Text(
                         "Detection",
@@ -63,8 +64,12 @@ fun CardHeading(){
                         textAlign = TextAlign.Left
                     )
                 }
+                Column(modifier = Modifier.fillMaxSize()){
+                    Image(painter = painterResource(id = R.drawable.doctor), contentDescription = "heart")
+                }
+            }
 
-            //Image(painter = painterResource(id = R.drawable.heart), contentDescription = "heart")
+
 
         }
 
