@@ -24,15 +24,14 @@ import androidx.compose.ui.unit.sp
 import com.example.heartdiseasedetetectionapp.R
 import com.example.heartdiseasedetetectionapp.ViewModel.HeartDiseaseViewModel
 
-
 @SuppressLint("StateFlowValueCalledInComposition")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun CustomTextFieldOldpeak(placeholder: String, viewModel: HeartDiseaseViewModel){
-    var textFieldValue by remember{mutableStateOf("0")}
+fun CustomTextFieldAge(placeholder: String, viewModel: HeartDiseaseViewModel){
+    var textFieldValue by remember{ mutableStateOf("0") }
 
-    val floatValue = textFieldValue.toFloatOrNull() ?: 0f
-    viewModel.oldpeak.value = floatValue
+    val intValue = textFieldValue.toIntOrNull()?:0
+    viewModel.age.value = intValue
 
     TextField(value = textFieldValue, onValueChange = {textFieldValue=it},
         colors = TextFieldDefaults.textFieldColors(
@@ -47,7 +46,7 @@ fun CustomTextFieldOldpeak(placeholder: String, viewModel: HeartDiseaseViewModel
         ),
         singleLine = true,
         maxLines = 1,
-        placeholder = {Text(placeholder, fontSize = 15.sp)},
+        placeholder = { Text(placeholder, fontSize = 15.sp) },
         shape = RoundedCornerShape(10.dp),
         modifier = Modifier
             .border(

@@ -1,12 +1,10 @@
 package com.example.heartdiseasedetetectionapp.View.HomeScreen.Components
 
-import android.view.WindowManager
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -24,30 +22,27 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
-import androidx.compose.ui.res.colorResource
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.heartdiseasedetetectionapp.R
+import com.example.heartdiseasedetetectionapp.ViewModel.HeartDiseaseViewModel
 
 
 @Composable
-fun SexCard(label: String, image: Painter){
+fun SexCardMale(label: String, image: Painter, viewModel: HeartDiseaseViewModel){
 
     var cardState by remember{mutableStateOf(false)}
     var iconState by remember{mutableStateOf(false)}
     var textState by remember{ mutableStateOf(false)}
 
-    var c = 0xFFAEDEFC
     Card(modifier = Modifier
         .height(176.dp)
         .width(176.dp)
         .clickable { cardState =!cardState
             iconState =!iconState
             textState =!textState
+            if(cardState) viewModel.sex.value = 1 else viewModel.sex.value =-1
                    },
-        colors = CardDefaults.cardColors(if(cardState==false) Color(0xFFFFFFFF) else Color(0xFF11009E)),
+        colors = CardDefaults.cardColors(if(!cardState) Color(0xFFFFFFFF) else Color(0xFF11009E)),
         elevation = CardDefaults.cardElevation(10.dp)
     )
     {

@@ -56,7 +56,7 @@ fun CardHeading(){
                         modifier = Modifier.offset(y = -10.dp)
                     )
                     Text(
-                        "A machine learning model that can predict your heart disease with 96% accuracy",
+                        "A machine learning model that can predict your heart disease with 97% accuracy",
                         fontSize = 15.sp,
                         color = Color.White,
                         modifier = Modifier.offset(y = -8.dp),

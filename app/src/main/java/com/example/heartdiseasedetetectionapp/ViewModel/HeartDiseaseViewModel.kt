@@ -12,7 +12,7 @@ class HeartDiseaseViewModel: ViewModel() {
     var age = MutableStateFlow<Int>(0)
     var _age: StateFlow<Int> = age
 
-    var sex = MutableStateFlow<Int>(-1)
+    var sex = MutableStateFlow<Int>(-1) // done
     var _sex: StateFlow<Int> = sex
 
     var cp = MutableStateFlow<Int>(-1) // done
@@ -24,8 +24,8 @@ class HeartDiseaseViewModel: ViewModel() {
     var chol = MutableStateFlow<Int>(0) // done
     var _chol: StateFlow<Int> = chol
 
-    var fbsValue = MutableStateFlow<Int>(-1) //done
-    var _fbsValue: StateFlow<Int> = fbsValue
+    var fbs = MutableStateFlow<Int>(-1) //done
+    var _fbs: StateFlow<Int> = fbs
 
     var restecg = MutableStateFlow<Int>(-1) // done
     var _restecg: StateFlow<Int> = restecg
@@ -48,21 +48,21 @@ class HeartDiseaseViewModel: ViewModel() {
     var thal = MutableStateFlow<Int>(-1) // done
     var _thal: StateFlow<Int> = thal
 
-    var responseValue = MutableStateFlow<String>("")
+    // result
+    var responseValue = MutableStateFlow<String>("***")
     var _responseValue: StateFlow<String> = responseValue
 
-    var serverCode = MutableStateFlow<String>("")
+    var serverCode = MutableStateFlow<String>("***")
     var _servercode: StateFlow<String> = serverCode
 
-    fun postResponse(age: Int, sex: Int, cp: Int, trestbps: Int, chol: Int, fbs: Int,
-                     restecg: Int, thalach: Int, exang: Int, oldpeak: Float, slope: Int,
-                     ca: Int, thal: Int) {
+    fun postResponse() {
         viewModelScope.launch {
             val response = RetrofitInstance.apiInterface
-                .predictDisease(age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal)
+                .predictDisease(age.value, sex.value, cp.value, trestbps.value, chol.value, fbs.value, restecg.value, thalach.value, exang.value, oldpeak.value, slope.value, ca.value, thal.value)
 
             if (response.isSuccessful) {
                 responseValue.value = response.body()?.targetValue ?: "No data"
+                serverCode.value = response.code().toString()
             } else {
                 serverCode.value = response.code().toString()
             }

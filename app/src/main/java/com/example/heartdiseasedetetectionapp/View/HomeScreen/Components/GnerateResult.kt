@@ -1,5 +1,6 @@
 package com.example.heartdiseasedetetectionapp.View.HomeScreen.Components
 
+import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
@@ -15,6 +16,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -24,14 +26,18 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.heartdiseasedetetectionapp.R
+import com.example.heartdiseasedetetectionapp.ViewModel.HeartDiseaseViewModel
 
 @Composable
-fun GenerateResult(navController: NavHostController){
+fun GenerateResult(navController: NavHostController, viewModel: HeartDiseaseViewModel){
+    val context = LocalContext.current
     Card(modifier = Modifier
         .fillMaxWidth()
         .height(100.dp)
         .background(Color.Transparent)
-        .clickable { navController.navigate("resultScreen") },
+        .clickable { viewModel.postResponse()
+            Toast.makeText(context, "Done", Toast.LENGTH_SHORT).show()
+                   },
         shape = RoundedCornerShape(10.dp),
         colors = CardDefaults.cardColors(colorResource(id = R.color.secondary))
         ) {

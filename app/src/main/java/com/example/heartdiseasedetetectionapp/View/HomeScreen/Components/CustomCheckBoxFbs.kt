@@ -68,17 +68,17 @@ fun CustomCheckBoxFbs(text1: String = "Yes", text2: String = "No", viewModel: He
                                 .background(Color.Transparent)
                                 .border(
                                     width = 1.dp,
-                                    color = if (buttonStateYes == false) Color(0xFF000000) else Color(
+                                    color = if (!buttonStateYes) Color(0xFF000000) else Color(
                                         0xFF11009E
                                     ),
                                     shape = RoundedCornerShape(10.dp)
                                 )
                                 .clickable { buttonStateYes = !buttonStateYes
-                                           if(buttonStateYes) viewModel.fbsValue.value = 1 else viewModel.fbsValue.value=-1},
+                                           if(buttonStateYes) viewModel.fbs.value = 1 else viewModel.fbs.value=-1},
 
                             shape = RoundedCornerShape(10.dp),
                             colors = CardDefaults.cardColors(
-                                if (buttonStateYes == false) Color(
+                                if (!buttonStateYes) Color(
                                     0xFFFFFFFF
                                 ) else Color(0xFF11009E)
                             )
@@ -113,7 +113,7 @@ fun CustomCheckBoxFbs(text1: String = "Yes", text2: String = "No", viewModel: He
                                     shape = RoundedCornerShape(10.dp)
                                 )
                                 .clickable { buttonStateNo = !buttonStateNo
-                                    if(buttonStateNo) viewModel.fbsValue.value = 0 else viewModel.fbsValue.value=-1},
+                                    if(buttonStateNo) viewModel.fbs.value = 0 else viewModel.fbs.value=-1},
                             shape = RoundedCornerShape(10.dp),
                             colors = CardDefaults.cardColors(
                                 if (buttonStateNo == false) Color(
