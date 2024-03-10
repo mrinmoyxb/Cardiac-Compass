@@ -2,9 +2,6 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="Demo">
-        <State />
-      </entry>
       <entry key="DemoDisplayFunc">
         <State />
       </entry>
@@ -15,6 +12,9 @@
         <State />
       </entry>
       <entry key="MyComposable">
+        <State />
+      </entry>
+      <entry key="ResultScreen">
         <State />
       </entry>
       <entry key="app">

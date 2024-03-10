@@ -31,7 +31,7 @@ fun GenerateResult(navController: NavHostController){
         .fillMaxWidth()
         .height(100.dp)
         .background(Color.Transparent)
-        .clickable { navController.navigate("result screen") },
+        .clickable { navController.navigate("resultScreen") },
         shape = RoundedCornerShape(10.dp),
         colors = CardDefaults.cardColors(colorResource(id = R.color.secondary))
         ) {

@@ -29,8 +29,9 @@ import com.example.heartdiseasedetetectionapp.ViewModel.HeartDiseaseViewModel
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CustomTextFieldOldpeak(placeholder: String, viewModel: HeartDiseaseViewModel){
-    var textFieldValue by remember{mutableStateOf("")}
-    viewModel.oldpeak.value = textFieldValue.toFloat()
+    var textFieldValue by remember{mutableStateOf("0")}
+    val floatValue = textFieldValue.toFloatOrNull() ?: 0f
+    viewModel.oldpeak.value = floatValue
 
     TextField(value = textFieldValue, onValueChange = {textFieldValue=it},
         colors = TextFieldDefaults.textFieldColors(
@@ -49,7 +50,7 @@ fun CustomTextFieldOldpeak(placeholder: String, viewModel: HeartDiseaseViewModel
         shape = RoundedCornerShape(10.dp),
         modifier = Modifier
             .border(
-                width = 2.dp, color = if (textFieldValue == "") Color.Black else colorResource(
+                width = 2.dp, color = if (textFieldValue == "0") Color.Black else colorResource(
                     id = R.color.border1
                 ),
                 shape = RoundedCornerShape(10.dp)

@@ -28,8 +28,10 @@ import com.example.heartdiseasedetetectionapp.ViewModel.HeartDiseaseViewModel
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CustomTextFieldThalach(placeholder: String, viewModel: HeartDiseaseViewModel){
-    var textFieldValue by remember{ mutableStateOf("") }
-    viewModel.thalach.value = textFieldValue.toInt()
+    var textFieldValue by remember{ mutableStateOf("0") }
+
+    val intValue = textFieldValue.toIntOrNull()?:0
+    viewModel.thalach.value = intValue
 
     TextField(value = textFieldValue, onValueChange = {textFieldValue=it},
         colors = TextFieldDefaults.textFieldColors(
@@ -48,7 +50,7 @@ fun CustomTextFieldThalach(placeholder: String, viewModel: HeartDiseaseViewModel
         shape = RoundedCornerShape(10.dp),
         modifier = Modifier
             .border(
-                width = 2.dp, color = if (textFieldValue == "") Color.Black else colorResource(
+                width = 2.dp, color = if (textFieldValue == "0") Color.Black else colorResource(
                     id = R.color.border1
                 ),
                 shape = RoundedCornerShape(10.dp)
