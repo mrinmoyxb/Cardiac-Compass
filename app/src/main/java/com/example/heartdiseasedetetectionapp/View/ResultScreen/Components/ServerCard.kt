@@ -14,26 +14,19 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.input.pointer.PointerIcon.Companion.Text
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.heartdiseasedetetectionapp.R
-import com.example.heartdiseasedetetectionapp.ViewModel.HeartDiseaseViewModel
 
 @Composable
-fun ResultCard(result: String){
+fun ServerCard(server: String){
 
-    val r: String = when(result){
-        "0" -> "The ML model's output indicates no detectable disease"
-        "1" -> "The ML model's indicates a potential disease"
-        else -> {""}
-    }
     Card(
         modifier = Modifier
-            .height(300.dp)
+            .height(100.dp)
             .width(300.dp)
             .background(Color.Transparent),
         shape = RoundedCornerShape(10.dp),
@@ -41,7 +34,7 @@ fun ResultCard(result: String){
         elevation = CardDefaults.cardElevation(10.dp)
     ){
         Box(modifier = Modifier.fillMaxSize().padding(10.dp), contentAlignment = Alignment.Center) {
-            Text(r, fontSize = 25.sp, color = Color.White, textAlign = TextAlign.Center, fontWeight = FontWeight.Medium)
+            Text(server, fontSize = 25.sp, color = Color.White, textAlign = TextAlign.Center, fontWeight = FontWeight.Medium)
         }
     }
 }
