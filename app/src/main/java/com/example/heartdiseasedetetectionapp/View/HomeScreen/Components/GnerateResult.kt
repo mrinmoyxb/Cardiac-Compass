@@ -37,6 +37,7 @@ fun GenerateResult(navController: NavHostController, viewModel: HeartDiseaseView
         .background(Color.Transparent)
         .clickable { viewModel.postResponse()
             Toast.makeText(context, "Done", Toast.LENGTH_SHORT).show()
+            navController.navigate("resultScreen")
                    },
         shape = RoundedCornerShape(10.dp),
         colors = CardDefaults.cardColors(colorResource(id = R.color.secondary))

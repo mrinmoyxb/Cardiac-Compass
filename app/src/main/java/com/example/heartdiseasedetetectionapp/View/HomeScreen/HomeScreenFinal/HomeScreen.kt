@@ -49,9 +49,9 @@ import com.example.heartdiseasedetetectionapp.ViewModel.HeartDiseaseViewModel
 
 @SuppressLint("StateFlowValueCalledInComposition")
 @Composable
-fun HomeScreen(navController: NavHostController){
+fun HomeScreen(navController: NavHostController, viewModel: HeartDiseaseViewModel){
 
-    val viewModel: HeartDiseaseViewModel = viewModel()
+    //val viewModel: HeartDiseaseViewModel = viewModel()
     val response by viewModel.responseValue.collectAsState()
     val server by viewModel.serverCode.collectAsState()
 
