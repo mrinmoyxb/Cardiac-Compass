@@ -52,6 +52,7 @@ fun CustomDropDownMenuThal(items: List<String>, viewModel: HeartDiseaseViewModel
         "Fixed defect" -> viewModel.thal.value = 0
         "Normal blood flow" -> viewModel.thal.value = 1
         "Reversible defect" -> viewModel.thal.value = 2
+        "Not Available" -> viewModel.thal.value = 3
     }
 
     CompositionLocalProvider(

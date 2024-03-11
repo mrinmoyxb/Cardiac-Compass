@@ -52,7 +52,8 @@ fun CustomDropDownMenuCa(items: List<String>, viewModel: HeartDiseaseViewModel) 
         "0" -> viewModel.ca.value = 0
         "1" -> viewModel.ca.value = 1
         "2" -> viewModel.ca.value = 2
-        "3" -> viewModel.ca.value = 2
+        "3" -> viewModel.ca.value = 3
+        "4" -> viewModel.ca.value = 4
     }
 
     CompositionLocalProvider(

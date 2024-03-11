@@ -123,7 +123,7 @@ fun HomeScreen(navController: NavHostController, viewModel: HeartDiseaseViewMode
 
                 // Row 8
                 CustomLabel(heading = "Thalassemia Value", 20)
-                CustomDropDownMenuThal(items = listOf("Fixed defect", "Normal blood flow", "Reversible defect"), viewModel)
+                CustomDropDownMenuThal(items = listOf("Fixed defect", "Normal blood flow", "Reversible defect", "Not Available"), viewModel)
                 Spacer(modifier = Modifier.height(12.dp))
 
                 // Row 9
@@ -143,7 +143,7 @@ fun HomeScreen(navController: NavHostController, viewModel: HeartDiseaseViewMode
 
                 // Row 12
                 CustomLabel(heading = " Number of major vessels(ca)", 20)
-                CustomDropDownMenuCa(items = listOf("0", "1", "2", "3"), viewModel)
+                CustomDropDownMenuCa(items = listOf("0", "1", "2", "3", "4"), viewModel)
                 Spacer(modifier = Modifier.height(20.dp))
 
                 // Row 13
