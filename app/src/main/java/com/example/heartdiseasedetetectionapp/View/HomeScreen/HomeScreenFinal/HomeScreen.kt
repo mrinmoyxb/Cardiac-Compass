@@ -43,6 +43,7 @@ import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomT
 import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomTextFieldThalach
 import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.CustomTextFieldTrestbps
 import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.GenerateResult
+import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.ResetButton
 import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.SexCardFemale
 import com.example.heartdiseasedetetectionapp.View.HomeScreen.Components.SexCardMale
 import com.example.heartdiseasedetetectionapp.ViewModel.HeartDiseaseViewModel
@@ -147,15 +148,19 @@ fun HomeScreen(navController: NavHostController, viewModel: HeartDiseaseViewMode
                 Spacer(modifier = Modifier.height(20.dp))
 
                 // Row 13
-                GenerateResult(navController = navController, viewModel)
-                Spacer(modifier = Modifier.height(10.dp))
+                Row(modifier = Modifier.fillMaxWidth()) {
+                    GenerateResult(navController = navController, viewModel)
+                    Spacer(modifier = Modifier.width(5.dp))
+                    ResetButton(viewModel)
+                }
+                Spacer(modifier = Modifier.height(35.dp))
 
 
 
-                Text("Result")
-                Text(response, fontSize = 32.sp, color = Color.Black)
-                Text("Server")
-                Text(server, fontSize = 32.sp, color = Color.Black)
+//                Text("Result")
+//                Text(response, fontSize = 32.sp, color = Color.Black)
+//                Text("Server")
+//                Text(server, fontSize = 32.sp, color = Color.Black)
             }
         }
     }

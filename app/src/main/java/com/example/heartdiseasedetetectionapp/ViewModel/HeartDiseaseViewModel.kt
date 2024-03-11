@@ -49,10 +49,10 @@ class HeartDiseaseViewModel: ViewModel() {
     var _thal: StateFlow<Int> = thal
 
     // result
-    var responseValue = MutableStateFlow<String>("***")
+    var responseValue = MutableStateFlow<String>("Generating Result")
     var _responseValue: StateFlow<String> = responseValue
 
-    var serverCode = MutableStateFlow<String>("***")
+    var serverCode = MutableStateFlow<String>("Waiting for server response")
     var _servercode: StateFlow<String> = serverCode
 
     fun postResponse() {
@@ -67,6 +67,24 @@ class HeartDiseaseViewModel: ViewModel() {
                 serverCode.value = response.code().toString()
             }
         }
+    }
+
+    fun resetButton(){
+        age.value = 0
+        sex.value = -1
+        cp.value = -1
+        trestbps.value = 0
+        chol.value = 0
+        fbs.value = -1
+        restecg.value = -1
+        thalach.value = 0
+        exang.value = -1
+        oldpeak.value = 0.0f
+        slope.value = -1
+        ca.value = 0
+        thal.value = -1
+        responseValue.value = "Generating Result"
+        serverCode.value = "Waiting for server response"
     }
 
 }
