@@ -29,7 +29,7 @@ fun ResultCard(result: String){
     val r: String = when(result){
         "0" -> "The ML model's output indicates no detectable disease"
         "1" -> "The ML model's indicates a potential disease"
-        else -> {""}
+        else -> {"Generating Result"}
     }
     Card(
         modifier = Modifier

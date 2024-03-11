@@ -25,7 +25,6 @@ import com.example.heartdiseasedetetectionapp.ViewModel.HeartDiseaseViewModel
 
 @Composable
 fun ResultScreen(viewModel: HeartDiseaseViewModel){
-    //val viewModel: HeartDiseaseViewModel = viewModel()
 
     val result by viewModel.responseValue.collectAsState("")
     val server by viewModel.serverCode.collectAsState("")
